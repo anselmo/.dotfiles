@@ -1,0 +1,18 @@
+# export PS1="\w$ "
+export PATH="/usr/local:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$HOME/local/bin:$PATH"
+export EDITOR="mvim"
+EVENT_NOKQUEUE=1
+
+gemdoc() {
+  open $GEMDIR/doc/`$(which ls) $GEMDIR/doc | grep $1 | sort | tail -1`/rdoc/index.html
+}
+
+_gemdocomplete() {
+  COMPREPLY=($(compgen -W '$(`which ls` $GEMDIR/doc)' -- ${COMP_WORDS[COMP_CWORD]}))
+  return 0
+}
+
+complete -o default -o nospace -F _gemdocomplete gemdoc
+
+if [[ -s /Users/anselmo/.rvm/scripts/rvm ]] ; then source /Users/anselmo/.rvm/scripts/rvm ; fi  
+

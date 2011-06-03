@@ -1,0 +1,6 @@
+/*jslint browser: true, regexp: true */
+/*global jQuery, _, $, $App, $Org, Lmit, loadContent */
+/* vim: set ft=javascript: */
+
+
+

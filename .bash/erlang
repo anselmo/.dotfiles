@@ -1,0 +1,8 @@
+export ERLANG_BIN_DIR=/opt/local/bin/
+export ERLANG_INCLUDE_DIR=/opt/local/lib/erlang/usr/include/ 
+
+ERL_LIBS=/Library/Erlang/lib
+if [ -d $HOME/Library/Erlang/lib ]; then
+  ERL_LIBS=$HOME/Library/Erlang/lib:$ERL_LIBS
+fi
+export ERL_LIBS

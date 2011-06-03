@@ -1,0 +1,16 @@
+# changing directory to code project
+function c { cd ~/workspace/$1; }
+
+alias reload='. ~/.bash_profile'
+alias restart_rails='touch tmp/restart.txt'
+alias apache_logs='cd /private/var/log/apache2/'
+alias vhosts='sudo mvim  /private/etc/apache2/other/sites.conf'
+alias hosts='sudo mvim /etc/hosts'
+alias apache_restart='sudo apachectl restart'
+alias apache_stop='sudo apachectl -k stop'
+alias apache_conf='/private/etc/apache2'
+
+alias railsmate='ls -1 | egrep -vi "(log|tmp|cache|.git)" | xargs mate'
+
+alias nr='sudo kill -HUP `cat /var/run/nginx.pid`'
+alias ne='sudo mvim /usr/local/conf/nginx.conf'
